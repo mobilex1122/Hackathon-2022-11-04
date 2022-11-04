@@ -10,56 +10,53 @@
                 position: relative;
                 left: 42.5%;
             }
-            h1{
+            .Box {
+                padding-top: 1vh;
                 color: lightblue;
                 background-color: darkblue;
-                width: 30%;
-                text-align: center;
                 position: relative;
-                left: 35%;
+                font-size: Larger;
                 border-radius: 10px;
-                font-size: 40px;
-            }
-            p{
-                color: lightblue;
-                background-color: darkblue;
-                width: 20%;
                 text-align: center;
-                position: relative;
-                left: 40%;
-                border-radius: 10px;  
-                font-size: 27px;
             }
-            h3{
-                color: lightblue;
-                background-color: darkblue;
-                width: 20%;
-                text-align: center;
-                position: relative;
-                left: 40%;
-                border-radius: 10px;  
-                font-size: 30px;
+            #Box {
+                width: 30%;
+                left: 35%;
+            }
+            .CapText {
+                font-size: 24px;
+            }
+            #CapForm {
+                padding-bottom: 2vh;
             }
         </style>
     </head>
 
 
 <body>
-    <img src="../static/img/logo.png" width="15%">
-    <h1>
-        Saphire bananas
-    </h1>
-    <h3>
-        Ukol číslo ...
-    </h3>
-     <p>
-        vždy se zvetsuju, 
-        <br>
-        na koncci dne jsem 86400,
-        <br>
-        ale na začátku dne jsem zpet u 0,
-        <br>
-        co jsem?
-    </p>
+    <img src="{{url_for('static', filename='/img/logo.png')}}" width="15%">
+    <div class="Box" id="Box">
+        <h1 class="Title">
+            Sapphire Bananas
+        </h1>
+        <h2 class="CapTitle">
+            Captcha
+        </h2>
+        <p class="CapText">
+            Vždy se zvětšuju,<br>
+            Na konci dne jsem 86400,<br>
+            Ale na začátku dne jsem zase 0,<br>
+            Co jsem?
+        </p>
+        {% if x %}
+        <p>Špatná odpověď - Ujistěte se že odpověď je napsaná malími písmeny a v jednotném čísle gramaticky správně.</p>
+        {% endif %}
+        <form>
+            <div class="CapForm" id="CapForm">
+                <input type="text" placeholder="Odpověď" id="answer" name="answer">
+                <button action="submit" formaction="/sapphire/second/submit">Potrvdiť</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
