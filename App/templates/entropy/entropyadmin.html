@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Entropyadmin</title>
     <style>
         body{
             background-color: rgb(29, 29, 29);
@@ -35,6 +35,17 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
+
+            animation-name: flash;
+            animation-duration: 1000ms;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes flash {
+            0% {filter: brightness(1);}
+            80% {filter: brightness(.5);}
+            100% {filter: brightness(1);}
         }
     </style>
     <script>
