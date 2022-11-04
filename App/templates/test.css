@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+}
+
+.lshow {
+    overflow-wrap: break-word;
+    flex-wrap: wrap;
+    width: 50px;
+    background-color: gray;
+    overflow: hidden;
+    height: 25px;
+}
+.pshow {
+
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    top: 0px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0);
+    animation-name: textshow;
+    animation-duration: 10s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes textshow {
+    0% {color: rgba(255, 255, 255, 0);}
+    10% {color: rgb(255, 255, 255); opacity: 1;}
+    80% {color: rgb(255, 255, 255); opacity: 1;}
+    100% {color: rgba(255, 255, 255, 0); opacity: 0; pointer-events: none;}
+}
+
+.loading h1 {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-100%);
+}
+
+.loading img {
+    height: 200px;
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+
+    filter: hue-rotate(.5turn) grayscale(1);
+    opacity: 0.3;
+    animation-name: logoshow;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+.loading p {
+    overflow-wrap: break-word;
+    flex-wrap: wrap;
+    width: 10ch;
+    background-color: rgba(128, 128, 128, 0);
+    overflow: hidden;
+    height: 25px;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@keyframes logoshow {
+    0% {filter: hue-rotate(.5turn) grayscale(1); transform: translate(-50%, -50%) scale(.9); opacity: 0.3;}
+    5% {transform: translate(-50%, -50%) scale(.9);}
+    20% {transform: translate(-50%, -50%) scale(1);}
+    100% {filter: hue-rotate(0turn) grayscale(0); transform: translate(-50%, -50%) scale(1); opacity: 1;}
+}
+@keyframes loading{
+    0% {width: 7ch;}
+    100% {width: 10ch;}
+}
