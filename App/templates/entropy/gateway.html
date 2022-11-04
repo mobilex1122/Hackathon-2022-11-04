@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Entropy - Gateway</title>
+        <style>
+            body{
+                background-color: rgb(29, 29, 29);
+            }
+            .BD{
+                text-align: center;
+            }
+            input{
+                background-color: rgb(29, 29, 29);
+                border-color: white;
+                width: 30rem;
+                padding: 1.25rem;
+                margin-bottom: 1.25rem;
+                border-radius: 1.25rem;
+                color:  white;
+                font-size: 1.875rem;
+            }
+            button{
+                background-color: rgb(29, 29, 29);
+                border-color: white;
+                width: 15rem;
+                padding: 1.25rem;
+                margin-top: 1.25rem;
+                border-radius: 1.25rem;
+                color:  white;
+                font-size: 1.875rem;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="BD">            
+                {% if x %}
+                <p style="background-color: red;">Invalid username or password!</p>
+                {% endif %}
+            <form>
+                <div><img src="{{url_for('static', filename='/img/logo2.png')}}" width="250px"></div>
+                <br>
+                <div style="padding: 0px;">
+                    <input type="text" name="username" placeholder="Username"><br>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <button action="submit" formaction="?">Login</button><br>
+                <input type="text" name="err" value="1" style="opacity: 0;">
+            </form>
+        </div>
+    </body>
+</html>

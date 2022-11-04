@@ -1,6 +1,7 @@
 import asyncio
 from flask import Flask, redirect
 from decouple import config
+from datetime import timedelta
 from routes.sapphire import sapphire
 from routes.entropy import entropy
 
@@ -9,6 +10,9 @@ app = Flask(__name__)
 
 app.register_blueprint(sapphire, url_prefix="/sapphire")
 app.register_blueprint(entropy, url_prefix="/entropy")
+
+app.secret_key = "5ap6h1reBan4nas"
+app.permanent_session_lifetime = timedelta(minutes=2880)
 
 @app.route("/")
 async def index():

@@ -4,7 +4,7 @@
     <head>
         <style>
             body{
-                background-color: lightblue;
+                background-color: #83cee0;
             }
             img{
                 position: relative;
@@ -12,8 +12,8 @@
             }
             .Box {
                 padding-top: 1vh;
-                color: lightblue;
-                background-color: darkblue;
+                color: #83cee0;
+                background-color: #5f5dbd;
                 position: relative;
                 font-size: Larger;
                 border-radius: 10px;
@@ -49,12 +49,12 @@
             Co jsem?
         </p>
         {% if x %}
-        <p>Špatná odpověď - Ujistěte se že odpověď je napsaná malími písmeny a v jednotném čísle gramaticky správně.</p>
+        <p>Špatná odpověď - Ujistěte se že odpověď je napsaná malími písmeny a v jednotném čísle gramaticky správně.<br>Nápověda: Jednotka měření času</p>
         {% endif %}
         <form>
             <div class="CapForm" id="CapForm">
                 <input type="text" placeholder="Odpověď" id="answer" name="answer">
-                <button action="submit" formaction="/sapphire/second/submit">Potrvdiť</button>
+                <button action="submit" formaction="/sapphire/second/submit">Potrvdit</button>
             </div>
         </form>
     </div>

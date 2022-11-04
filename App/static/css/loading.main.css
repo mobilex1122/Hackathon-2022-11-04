@@ -20,6 +20,19 @@ a:hover {
     color: blue;
 }
 
+#hint {
+    display: block;
+    left: 50%;
+    top: 50%;
+    align-content: center;
+    background-color: white;
+    color: black;
+    padding: 10vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: larger;
+}
+
 .lshow {
     overflow-wrap: break-word;
     flex-wrap: wrap;
@@ -27,9 +40,6 @@ a:hover {
     background-color: gray;
     overflow: hidden;
     height: 25px;
-}
-.pshow {
-
 }
 
 .loading {
