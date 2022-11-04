@@ -1,13 +1,14 @@
 import asyncio
 from flask import Flask
-from flaskext.markdown import Markdown
 from decouple import config
 from routes.sapphire import sapphire
+from routes.entropy import entropy
 
 # Define application
 app = Flask(__name__)
 
 app.register_blueprint(sapphire, url_prefix="/sapphire")
+app.register_blueprint(entropy, url_prefix="/entropy")
 
 # Define Main Function
 async def main() -> None:
