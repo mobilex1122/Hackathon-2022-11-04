@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Sapphire Bananas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/loading.main.css') }}">
 </head>
 <body>
     <div class="loading">
-        <img src="../static/img/logo.png">
-        <h1>SafirBananas</h1>
+        <img src="{{ url_for('static', filename='/img/logo.png') }}">
+        <h1>Sapphire Bananas</h1>
         <p>Loading...</p>
     </div>
+    <a id="proceed" href="/sapphire/terminal">Proceed</a>
 </body>
 </html>

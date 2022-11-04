@@ -1,5 +1,5 @@
 import asyncio
-from flask import Flask
+from flask import Flask, redirect
 from decouple import config
 from routes.sapphire import sapphire
 from routes.entropy import entropy
@@ -9,6 +9,10 @@ app = Flask(__name__)
 
 app.register_blueprint(sapphire, url_prefix="/sapphire")
 app.register_blueprint(entropy, url_prefix="/entropy")
+
+@app.route("/")
+async def index():
+    return redirect("/sapphire/")
 
 # Define Main Function
 async def main() -> None:
