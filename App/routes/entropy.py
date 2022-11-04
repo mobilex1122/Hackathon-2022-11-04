@@ -1,4 +1,5 @@
 from flask import Blueprint, session, request, redirect
 from flask.wrappers import Response
 
-sapphire = Blueprint("sapphire", __name__)
+entropy = Blueprint("entropy", __name__)
+
