@@ -82,7 +82,7 @@ body {
     0% {filter: hue-rotate(.5turn) grayscale(1); transform: translate(-50%, -50%) scale(.9); opacity: 0.3;}
     5% {transform: translate(-50%, -50%) scale(.9);}
     20% {transform: translate(-50%, -50%) scale(1);}
-    100% {filter: hue-rotate(0turn) grayscale(0); transform: translate(-50%, -50%) scale(1); opacity: 1;}
+    100% {filter: hue-rotate(0turn) grayscale(0); transform: translate(-50%, -50%) scale(1); opacity: 1; pointer-events: none;}
 }
 @keyframes loading{
     0% {width: 7ch;}
