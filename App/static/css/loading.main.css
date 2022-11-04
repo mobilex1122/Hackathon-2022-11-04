@@ -1,5 +1,23 @@
 body {
     margin: 0;
+    background: black;
+}
+
+a {
+    display: block;
+    left: 50%;
+    top: 50%;
+    align-content: center;
+    padding-top: 10vh;
+    padding: 10vh;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    font-size: larger;
+}
+
+a:hover {
+    color: blue;
 }
 
 .lshow {
@@ -76,7 +94,6 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
 }
-
 
 @keyframes logoshow {
     0% {filter: hue-rotate(.5turn) grayscale(1); transform: translate(-50%, -50%) scale(.9); opacity: 0.3;}

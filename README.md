@@ -13,4 +13,3 @@
 
 - Jedná se o puzzle hru která se podobá CTF a ARG žánrům.
 - V realném světe se schovají nápovědy, které buďto vedou na jiné místo v budově nebo odkazují na digitální média.
-- Všechny nápovědy a fyzické složky se nacházejí ve složce Documents
