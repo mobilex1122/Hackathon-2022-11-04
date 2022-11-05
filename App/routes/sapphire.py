@@ -3,6 +3,11 @@ from flask.wrappers import Response
 
 sapphire = Blueprint("sapphire", __name__)
 
+@sapphire.route("/test")
+async def testing():
+    temp = request.args.get("temp")
+    return render_template(f"{temp}")
+
 @sapphire.route("/")
 async def index():
     if str(request.args.get("code")) == "7af62fd3081eecd37ae3b619f8702121ce7473cd9e72f6800926c1889ce7d3d3":
