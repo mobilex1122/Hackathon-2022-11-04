@@ -1,0 +1,93 @@
+body {
+    background-color: wheat;
+}
+
+.loading {
+    background-color: white;
+    overflow: hidden;
+    border-radius: 3px;
+    border: rgb(34, 34, 34) solid 1px;
+    animation-name: loading-all;
+    animation-duration: 1ms;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    display: block;
+}
+
+@keyframes loading-all {
+    0% {display: auto;}
+    100% {height: 0; opacity: 0;}
+}
+
+
+.loading span {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-2px);
+}
+
+.loading div {
+    width: 0%;
+    height: 20px;
+    background: linear-gradient(rgb(147, 201, 0),rgb(139, 102, 0));
+    text-align: center;
+    animation-name: loading-in;
+    animation-duration: 4s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(10,end);
+}
+
+@keyframes loading-in {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+
+
+
+
+a {
+    animation: disabled;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    animation-duration: 1ms;
+
+    pointer-events: none; 
+    color: gray;
+}
+
+button {
+    animation: disabled-btn;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    animation-duration: 1ms;
+
+    pointer-events: none; 
+    color: gray;
+    border-radius: 0;
+}
+input {
+    animation: disabled-form;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    animation-duration: 1ms;
+
+    pointer-events: none; 
+    background-color: gray;
+    margin: 2px 0px;
+}
+
+@keyframes disabled-btn {
+    0% {pointer-events: none; color: gray;}
+    100% {pointer-events: all; color: rgb(0, 0, 0);}
+}
+
+@keyframes disabled-form {
+    0% {pointer-events: none; background-color: gray;}
+    100% {pointer-events: all; background-color: rgb(255, 255, 255);}
+}
+
+@keyframes disabled {
+    0% {pointer-events: none; color: gray;}
+    100% {pointer-events: all; color: blue;}
+}
