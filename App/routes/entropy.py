@@ -5,10 +5,33 @@ entropy = Blueprint("entropy", __name__)
 
 @entropy.route("/")
 async def index():
-    if not str(request.args.get("access")).lower().strip() == "885ff66cce9e368f38781748e0d8947488084d90df46c11fdcec8c1ea207bfab":
+    try:
+        session["mailAuth"]
+    except KeyError:
         return Response("Unauthorized", status=401)
-    mails = [("hyscript7@gmail.com", "Testing mails for Entropy", url_for("static", filename="/img/logo.png"), "Entropy_Logo.png")]
-    return render_template("mailen.html", emails=mails, mailuser=" -- LORE: Some admin at Entropy. If you are seeing this, we didn't do our job -- ", theme="entropy", mailtitle="Entropy")
+    mails = [("danielf@entropy.org", "Core changes - Important", url_for("static", filename="/mails/mail_core_updates.txt"), "mail_core_updates.txt")]
+    return render_template("mailen.html", emails=mails, mailuser="tomh", theme="entropy", mailtitle="Entropy")
+
+@entropy.route("/terminal")
+async def indexauth():
+    try:
+        session["gatewayDown"]
+    except:
+        return Response("Authentication via the Auth Gateway failed: This IP Address is not whitelisted!", status=403)
+    try:
+        session["mailAuth"]
+        return redirect("/entropy/")
+    except KeyError:
+        return render_template("/entropy/maillogin.html")
+
+@entropy.route("/terminal/submit")
+async def indexauthsubmit():
+    u = request.form.get("username")
+    p = request.form.get("password")
+    if not u == "tomh@entropy.org" and p == "7jul1998":
+        return redirect("/entropy/terminal")
+    session["mailAuth"] = True
+    return redirect("/entropy/")
 
 @entropy.route("/gateway/")
 async def gateway_red():
@@ -50,6 +73,10 @@ async def gateway_sapphire_finish():
 @entropy.route("/core/")
 async def core_redirect():
     try:
+        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
+    except KeyError:
+        pass
+    try:
         session["coreAuthed"]
     except KeyError:
         session["coreAuthed"] = False
@@ -60,15 +87,27 @@ async def core_redirect():
 @entropy.route("/core/admin/")
 async def core_admin():
     try:
+        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
+    except KeyError:
+        pass
+    try:
         session["coreAuthed"]
     except KeyError:
         session["coreAuthed"] = False
+    try:
+        session["coreWiped"]
+    except KeyError:
+        session["coreWiped"] = False
     if session["coreAuthed"]:
-        return render_template("/entropy/core_admin.html")
+        return render_template("/core/home.html", x=session["coreWiped"])
     return redirect("/entropy/core/")
 
 @entropy.route("/core/login/")
 async def core_login():
+    try:
+        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
+    except KeyError:
+        pass
     try:
         session["coreAuthed"]
     except KeyError:
@@ -76,27 +115,54 @@ async def core_login():
     if session["coreAuthed"]:
         return redirect("/core/")
     e = int(request.args.get("err", 0))
-    return render_template("/entropy/core_login.html", err=e)
+    return render_template("/core/login.html", err=e)
 
 @entropy.route("/core/login/submit/")
 async def core_login_submit():
-    u = request.form.get("username").strip()
-    p = request.form.get("password").strip()
+    try:
+        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
+    except KeyError:
+        pass
+    u = request.form.get("username")
+    p = request.form.get("password")
     if not u == "admin" and p == "p6B3k5JcAos7":
         return redirect("/core/login?err=1")
     session["coreAuthed"] = True
     return redirect("/entropy/core/")
 
+@entropy.route("/core/fullwipe")
+async def core_wipe():
+    try:
+        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
+    except KeyError:
+        pass
+    session["coreWiped"] = True
+    return redirect("/entropy/core/")
+
 @entropy.route("/vcs/")
 async def core_vcs():
     try:
-        session["vscDown"]
+        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
+    except KeyError:
+        pass
+    try:
+        session["coreAuthed"]
+    except KeyError:
+        session["coreAuthed"] = False
+    if not session["coreAuthed"]:
+        return redirect("/entropy/core")
+    try:
+        session["vcsDown"]
     except:
-        session["vscDown"] = False
-    return render_template("/entropy/vsc", x=session["vscDown"])
+        session["vcsDown"] = False
+    return render_template("/core/git.html", x=session["vcsDown"])
 
 
-@entropy.route("/vcs/submit")
-async def core_vcs():
-    session["vscDown"] = True
-    return redirect("/entropy/vsc/")
+@entropy.route("/vcs/rmall")
+async def core_vcs_wipe():
+    try:
+        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
+    except KeyError:
+        pass
+    session["vcsDown"] = True
+    return redirect("/entropy/vcs/")

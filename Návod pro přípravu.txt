@@ -1,0 +1,33 @@
+--- Šifrovačka : Průvod ---
+1) Invitation letter + Hint as to where to find the first QR Code
+2) QR Code under the bench opposite to VYT 2 - You receive the X=8 riddle
+3) X=8 - You head to 208 and scan another QR code that leads you to the "second" route riddle
+4) You are now at the captcha page for Sapphire, you gain access to your mails and continue forward
+5) You have access to the entropy gateway login but do not have the credentials. You will find those near the bench on the 2nd floor. Once you have those, you shutdown the gateway.
+6) Now that the gateway is down, you are given the Core mission. The player gains access to the Entropy Main login and gets the login credentials from the comments on the page.
+7) The mails will guide the user to the Core Login page URL QR code location
+8) They are now on the login page, where they will get the hint that the credentials are the the bottom floor near the stairs.
+9) The user now wipes the core and deletes all backups.
+--- Ending 1 : Sapphire Agent ---
+
+
+
+Obsah dopisu, který by uživatel měl obdržet před začátkem hry
+--- Invitation Letter ---
+Vítej Agente 014 v Sapphire Bananas.
+Důsledkem nedávných událostí je nutné si informace předávat pomocí šifer na různých místech.
+Pokud jsi připravený začít, pusť se do toho.
+
+.--. --- -.. / .-.. .- ...- .. -.-. -.- --- ..- / -. .- .--. .-. --- - .. / ...- -.-- - / ..---
+--- End Letter Content ---
+
+
+
+--- Umístnění QR kódů ---
+1337 - Pod lavičkou naproti VYT 2
+X=8 Riddle - U game masters - Game master by měl žákům, kteří mu/jí předají kód 1337, umožnit QR naskakovat.
+Second - Naproti 208 pod parapetem nebo za květináčem.
+Gateway Credentials - Blízko lavičku u 208. 
+Core URL - Mezipatro mezi posledním a 2. patrem.
+Core Credentials - Na prvním patře u schodů.
+--- Konec umístnění QR kódů ---

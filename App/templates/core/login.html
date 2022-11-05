@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORE - Login</title>
-    <link rel="stylesheet" href="coretheme.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/coretheme.css') }}">
 </head>
 <body>
     <div class="loading">
@@ -17,9 +17,9 @@
     <hr>
     <form>
         <div class="LoginForm" id="LoginForm">
-            <input type="text" placeholder="Name" id="name" name="answer"><br>
-            <input type="text" placeholder="Password" id="password" name="answer"><br>
-            <button action="submit" formaction="">Login</button>
+            <input type="text" placeholder="Username" id="name" name="username"><br>
+            <input type="text" placeholder="Password" id="password" name="password"><br>
+            <button action="submit" formaction="/entropy/core/login/submit">Login</button>
         </div>
     </form>
 </body>

@@ -1,0 +1,8 @@
+Sup, Tom.
+I had to change the location of the Core Authentication Server.
+The admin account credentials are changed as well.
+
+The new URL is hidden on the in-between floor between the 3rd and 2nd floors.
+The changed credentials are on the first floor near the stairs.
+
+- D. Freeman

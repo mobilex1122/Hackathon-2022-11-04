@@ -1,0 +1,8 @@
+Good job, agent!
+We can now access the mail authentication page without getting blocked by the whitelist.
+
+Your mission is to get access to the Entropy Core Administration and wipe all the files you find.
+Beware backups - If there are any, delete them as well.
+Good luck agent. Linked is the Entropy Mail Server.
+
+Gateway: https://murmuring-island-72894.herokuapp.com/entropy/terminal/

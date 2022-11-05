@@ -1,5 +1,8 @@
-Uživatel dostane následující údaje:
-- Nápovědy kde najít přihlašovací údaje ve škole
-- Odkaz na login stránku
+Congratulations, agent!
+You have passed the entry test and now can participate in real missions.
 
-Mise se vyřeší tak, že uživatel se přihlásí jako admin a klikne na shutdown na gateway serveru
+Your task is to gain access to the administration panel of an authentication gateway for an opposing organization.
+We do not have the credentials, but we know where you can approximately find them.
+Check near the bench on the 2nd floor.
+
+Gateway: https://murmuring-island-72894.herokuapp.com/entropy/gateway/

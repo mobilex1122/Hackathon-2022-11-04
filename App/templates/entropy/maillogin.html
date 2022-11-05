@@ -39,27 +39,23 @@
             }
         </style>
     </head>
-<body>
-    <div class="BD">
-        
-        <img src="../static/img/logo2.png" width="250px">
-        <br>
-        <p>
-            Entropy email service
-        </p>
-        <div>
-         <input>
-            
-         </input>
-         <br>
-         <input type="password">
- 
-         </input>
+    <body>
+        <div class="BD">
+            <img src="{{ url_for('static', filename='/img/logo2.png') }}" width="250px">
+            <br>
+            <p>Entropy Email Service</p>
+            <!-- user: tomh@entropy.org pass: 7jul1998 -->
+            <form>
+                <div>
+                    <input type="text" name="username" placeholder="username@entropy.org">
+                    <br>
+                    <input type="password" name="password" placeholder="password">
+                </div>
+                <button action="submit" formaction="/entropy/terminal/submit">
+                    Login
+                </button>
+            </form>
+            <p>Reminder: Tom, please remove your credentials from the source code, the build script keeps re-adding it!</p>
         </div>
-        <button>
-            login
-        </button>
-    </div>
-</body>
-</body>
+    </body>
 </html>

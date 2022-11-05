@@ -1,6 +1,6 @@
 import asyncio
 import os
-from flask import Flask, redirect
+from flask import Flask, render_template, request
 from decouple import config
 from datetime import timedelta
 from routes.sapphire import sapphire
@@ -17,7 +17,21 @@ app.permanent_session_lifetime = timedelta(minutes=2880)
 
 @app.route("/")
 async def index():
-    return redirect("/sapphire/")
+    return render_template("index.html")
+
+@app.route("/ending")
+async def ending():
+    n = request.args.get("n")
+    e = {"s4pph1r3ag4n7": "1"}
+    return render_template("credits.html", n=e[n])
+
+@app.route("/test/<template>")
+async def test(template):
+    return render_template(template)
+
+@app.route("/test/<folder>/<template>")
+async def subtest(folder, template):
+    return render_template(f"{folder}/{template}")
 
 # Define Main Function
 async def main() -> None:
