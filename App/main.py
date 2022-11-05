@@ -21,10 +21,8 @@ async def index():
 
 # Define Main Function
 async def main() -> None:
-    global x
     FLASK_DEBUG = str(config('FLASK_DEBUG', "false")).lower() == "true"
     FLASK_PORT = int(os.environ['PORT'])
-    print(FLASK_PORT)
     if FLASK_DEBUG:
         app.run(host='0.0.0.0', port=FLASK_PORT, debug=FLASK_DEBUG)
         return
