@@ -46,6 +46,18 @@ body {
 
 
 
+a.now {
+    background-color:  rgba(128, 128, 128, 0.473);
+}
+
+.confr {
+    border: 2px red dashed;
+    width: fit-content;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+
 a {
     animation: disabled;
     animation-delay: 6s;
