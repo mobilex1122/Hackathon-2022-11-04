@@ -6,8 +6,9 @@ RUN ["python", "-m", "pip", "install", "-r", "./requirements.txt"]
 WORKDIR /app
 
 # Setup Env
+ARG PORT
 ENV FLASK_DEBUG=False
-ENV FLASK_PORT=8080
+ENV FLASK_PORT=$PORT
 
 # Expose ports
 EXPOSE ${FLASK_PORT}

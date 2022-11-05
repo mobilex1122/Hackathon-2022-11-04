@@ -1,4 +1,5 @@
 import asyncio
+import os
 from flask import Flask, redirect
 from decouple import config
 from datetime import timedelta
@@ -22,7 +23,8 @@ async def index():
 async def main() -> None:
     global x
     FLASK_DEBUG = str(config('FLASK_DEBUG', "false")).lower() == "true"
-    FLASK_PORT = int(config('FLASK_PORT', "8080"))
+    FLASK_PORT = int(os.environ['PORT'])
+    print(FLASK_PORT)
     if FLASK_DEBUG:
         app.run(host='0.0.0.0', port=FLASK_PORT, debug=FLASK_DEBUG)
         return
