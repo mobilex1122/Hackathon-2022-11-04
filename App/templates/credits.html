@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            background-color: black;
+            animation-name: show;
+            animation-duration: 5s;
+            animation-delay: 3s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes show {
+            0% {
+                color: black;
+            }
+            100% {
+                color: white;
+            }
+        }
+
+        h1 {
+            font-size: 4rem;
+            padding: 0;
+            margin: 0;
+        }
+        hr {
+            height: calc(50vh - 40px);
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+
+        div {
+            animation-name: move;
+            animation-duration: 30s;
+            animation-delay: 10s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: forwards;
+        }
+
+
+        div.move {
+            animation-name: move-2;
+            animation-duration: 10s;
+            animation-delay: 30s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -0%);
+        }
+
+        img {
+            width: 200px;
+        }
+
+        @keyframes move {
+            0% {transform: translateY(0%);}
+            100% {transform: translateY(-100%);}
+        }
+        @keyframes move-2 {
+            0% {
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -0%);
+            }
+            100% {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <hr>
+        <H1>ENDING 1</H1>
+        <hr>
+        <h2>Direktor</h2> 
+        Štefan Prokop
+        <hr>
+        <h2>Programování:</h2><br>
+        Štefan Prokop, Jan Palma a Kristián Maas
+        <hr>
+        <h2>Příběh</h2>
+        Jára Judl
+        <hr>
+        
+    </div>
+    <div class="move">
+        Vytvořilo<br>
+        <img src="../static/img/sblogo.png" alt=""></div>
+    <!-- @HyScript7 (Štefan) - Project manager a back end developer @mobilex1122 (Jan P.) - Front end developer @Kristi - Front end developer @Kaiy (Jára J.) Story writer -->
+</body>
+</html>
