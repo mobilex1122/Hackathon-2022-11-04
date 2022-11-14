@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+}
+
+.panel {
+    position: fixed;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    color: white;
+    transition: 200ms;
+}
+
+.panel h1 {
+    margin: 0;
+    display: inline-block;
+    font-size: large;
+    padding: 10px;
+    padding-left: 50px;
+    background-image: url("../App/static/img/logo.png");
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.panel a {
+    margin: -10px 0 ;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: inset 0px 0px rgba(0, 102, 255, 0);
+    font-size: large;
+    padding:10px 20px;
+    text-decoration: none;
+    transition: 200ms;
+    color: white;
+    border-bottom: 0px rgb(255, 255, 255) solid;
+}
+
+.panel a:hover {
+    box-shadow: inset 0px -46px rgb(0, 102, 255);
+    padding:10px 20px;
+
+}
+.panel a.selected {
+    box-shadow: inset 0px 10px rgb(0, 102, 255);
+}
+
+
+home {
+    display: block;
+    width: 100%;
+    height: 400px;
+    background-color: #ff0000;
+    background: linear-gradient(45deg,
+    rgb(255, 0, 0), rgb(0, 0, 255),
+    rgb(251, 255, 0), rgb(0, 60, 255),
+    rgb(255, 0, 0), rgb(0, 0, 255),
+    rgb(81, 255, 0), rgb(0, 102, 255),
+    rgb(255, 145, 0), rgb(0, 255, 255),
+    rgb(255, 0, 128), rgb(0, 0, 255));
+    background-size: 600% 100%;
+
+    background-color: black;
+    animation-name: show;
+    animation-duration: 40s;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+}
+home div {
+    display: block;
+    width: 100%;
+    height: 400px;
+    background-image: url("../App/static/img/bg2.png");
+    background-size: 20px;
+    animation-name: bg;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+home img {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    animation-name: rot;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rot {
+    0% {filter:hue-rotate(0turn);}
+    100% {filter: hue-rotate(1turn);}
+}
+
+@keyframes show {
+    0% {background-position: 0%;}
+    100% {background-position: 100%;}
+}
+
+@keyframes bg {
+    0% {
+        background-position: 0px 0px;
+        background-size: 20px;
+    }
+    100% {
+        background-position: 0px 20px;
+        background-size: 20px;
+    }
+}
+
+
+nadpis {
+    display: block;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: large;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 0px;
+    box-shadow: inset  0px #ff0000;
+    border-radius: 0px;
+    transition: 200ms;
+    box-shadow: inset 0px 0px rgba(255, 0, 0, 0);
+}
+
+nadpis:target {
+    box-shadow: inset 15px 0px red;
+}
+
+main {
+    display: block;
+    padding-left: 30px;
+}
+
+a.download {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: rgb(0, 102, 255);
+    text-decoration: none;
+    color: white;
+}
+a.download:hover {
+    background-color: rgb(51, 133, 255);
+}

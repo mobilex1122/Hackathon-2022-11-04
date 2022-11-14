@@ -2,101 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Homepage</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        .header{
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            background-color: rgb(114, 183, 206);
-            color: white;
-            border: 0px none;
-            border-bottom: 3px solid black;
-
-        }
-        .headerleft{
-
-            display: inline-block;
-            padding-left: 10px;
-        }
-        .headerright{
-            display: inline-block;
-            padding-left: 10px;
-        }
-        .main{
-            margin: 100px; 
-        }
-        .main1{
-            font-size: 50px;
-            width: fit-content;
-        }
-        .main2{
-            font-size: 50px;
-            width: fit-content;
-        }
-        .download{
-            font-size: 50px;
-            width: fit-content; 
-        }
-        .blueb{
-            border: solid 5px;
-            background-color: rgb(114, 183, 206);
-            margin-bottom: 10px;
-        }
-        .img1{
-            height: 500px;
-            position: absolute;
-            left: 800px;
-            transform: translate(0,40px);
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SB Studios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/home.css') }}">
 </head>
-
-
 <body>
-    <div class="header">
-        <div class="headerleft">
-            <img src="../static/img/sblogo.png" height="50px">
-
-            <a href="https://github.com/mobilex1122/Hackathon-2022-11-04">
-                <img src="../static/img/gitlogo.png" height="50px">
-            </a>
-        </div>
-        <div class="headerright">
-
-        </div>
-    </div>
-    <div>
+    <div class="panel">
+        <h1> Project: Sapphire banana</h1>
         
-    <div class="main">
-        <img src="../static/img/code.png" class="img1">   
-        <div class="main1 blueb">
-            SB šifrovka
-        </div>
-        <div class="main2 blueb">
-            Sapphire banana je hra s:
-            <ul>
-                <li>příběhem</li>
-                <li>dvěma obtižnosti</li>
-                <li>třemi konci</li>
-                <li>dvanácti celkovích úkolu</li>
-                <li>plottwistem</li>
-            </ul> 
-        </div>
-        <div class="download blueb">
-            <a href="https://github.com/mobilex1122/Hackathon-2022-11-04">
-                Download
-            </a>
-        </div>  
+        <a href="#" class="selected" name="nab" onclick="navb('Home')">Home</a>
+        <a href="#about" name="nab" onclick="navb('About')">About</a>
+        <a href="#download" name="nab" onclick="navb('Download')">Download</a>
     </div>
-    </div>
+
+    <home>
+        <div></div>
+        <img src="{{ url_for('static', filename='/img/logo.png') }}" alt="">
+    </home>
+
+
+    <Br></Br>
+
+    <nadpis id="about">
+        SB šifrovka
+    </nadpis>
+    <main>
+        Sapphire banana je hra s:
+        <ul>
+            <li>příběhem</li>
+            <li>dvěma obtižnosti</li>
+            <li>třemi konci</li>
+            <li>dvanácti celkovích úkolu</li>
+            <li>plottwistem</li>
+        </ul>
+    </main>
+
+    <nadpis id="download">
+        Stažení
+    </nadpis>
+    <main>
+        <br>
+        <a href="https://github.com/mobilex1122/Hackathon-2022-11-04/archive/refs/heads/main.zip" class="download">Download</a>
+    <main>
+        
+    <script src="main.js"></script>
 </body>
 </html>
