@@ -11,23 +11,50 @@
             padding: 0;
             margin: 0;
             text-align: center;
-            color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+
+            width:100%;
+            height: 100%;
+            background: linear-gradient(45deg,
+                rgb(255, 0, 0), rgb(0, 0, 255),
+                rgb(255, 0, 0), rgb(0, 0, 255),
+                rgb(255, 0, 0), rgb(0, 0, 255),
+                rgb(255, 0, 0), rgb(0, 0, 255),
+                rgb(0, 0, 0), rgb(255, 0, 0));
+            background-size: 600% 100%;
+
             background-color: black;
             animation-name: show;
-            animation-duration: 5s;
-            animation-delay: 3s;
-            animation-timing-function: linear;
+            animation-duration: 40s;
+            animation-delay: 0s;
+            animation-timing-function: ease-out;
             animation-fill-mode: forwards;
         }
-
+        
         @keyframes show {
-            0% {
-                color: black;
-            }
-            100% {
-                color: white;
-            }
+            0% {background-position: 0%;}
+            100% {background-position: 100%;}
         }
+
+        .cover {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            animation-name: cover;
+            animation-duration: 10s;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+            position: fixed;
+            z-index: 200;
+            top: 0;
+            left: 0;
+        }
+
+        @keyframes cover {
+            0% {opacity: 1;}
+            100% {opacity: 0;}
+        }
+
 
         h1 {
             font-size: 4rem;
@@ -41,7 +68,7 @@
             border: none;
         }
 
-        div {
+        div.normal {
             animation-name: move;
             animation-duration: 30s;
             animation-delay: 10s;
@@ -50,9 +77,32 @@
         }
 
 
+        div.bg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("/static/img/bg2.png");
+            background-size: 15px;
+            background-position: center;
+            animation-name: bg;
+            animation-duration: 30s;
+            animation-delay: 10s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes bg {
+            0% {
+                background-position: 50% 50%;
+            }
+            100% {
+                background-position: 50% 0%;
+            }
+        }
+
         div.move {
             animation-name: move-2;
-            animation-duration: 10s;
+            animation-duration: 20s;
             animation-delay: 30s;
             animation-timing-function: ease-out;
             animation-fill-mode: forwards;
@@ -76,16 +126,29 @@
                 left: 50%;
                 transform: translate(-50%, -0%);
             }
-            100% {
+            50% {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
+            80% {
+                top: 50%;
+                left: 50%; 
+                transform: translate(-50%, -50%);
+                opacity: 1; 
+            }
+            100% {
+                top: 50%;
+                left: 50%; 
+                transform: translate(-50%, -50%);
+                opacity: 0; 
+            }
         }
     </style>
 </head>
-<body>
-    <div>
+<body class="wrapper">
+    <div class="bg"></div>
+    <div class="normal">
         <hr>
         <H1>ENDING {{n}}</H1>
         <hr>
@@ -103,6 +166,8 @@
     <div class="move">
         Vytvořilo<br>
         <img src="../static/img/sblogo.png" alt=""></div>
+
+    <div class="cover"></div>
     <!-- @HyScript7 (Štefan) - Project manager a back end developer; @mobilex1122 (Jan P.) - Front end developer; @Kristi - Front end developer; @Kaiy (Jára J.) Story writer -->
 </body>
 </html>
