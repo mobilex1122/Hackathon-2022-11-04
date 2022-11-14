@@ -73,10 +73,6 @@ async def gateway_sapphire_finish():
 @entropy.route("/core/")
 async def core_redirect():
     try:
-        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
-    except KeyError:
-        pass
-    try:
         session["coreAuthed"]
     except KeyError:
         session["coreAuthed"] = False
@@ -86,10 +82,6 @@ async def core_redirect():
 
 @entropy.route("/core/admin/")
 async def core_admin():
-    try:
-        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
-    except KeyError:
-        pass
     try:
         session["coreAuthed"]
     except KeyError:
@@ -105,10 +97,6 @@ async def core_admin():
 @entropy.route("/core/login/")
 async def core_login():
     try:
-        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
-    except KeyError:
-        pass
-    try:
         session["coreAuthed"]
     except KeyError:
         session["coreAuthed"] = False
@@ -119,10 +107,6 @@ async def core_login():
 
 @entropy.route("/core/login/submit/")
 async def core_login_submit():
-    try:
-        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
-    except KeyError:
-        pass
     u = request.form.get("username")
     p = request.form.get("password")
     if not u == "admin" and p == "p6B3k5JcAos7":
@@ -133,7 +117,8 @@ async def core_login_submit():
 @entropy.route("/core/fullwipe")
 async def core_wipe():
     try:
-        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
+        session["vcsDown"]
+        return redirect("/ending?n=s4pph1r3ag4n7")
     except KeyError:
         pass
     session["coreWiped"] = True
@@ -141,10 +126,6 @@ async def core_wipe():
 
 @entropy.route("/vcs/")
 async def core_vcs():
-    try:
-        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
-    except KeyError:
-        pass
     try:
         session["coreAuthed"]
     except KeyError:
@@ -161,7 +142,8 @@ async def core_vcs():
 @entropy.route("/vcs/rmall")
 async def core_vcs_wipe():
     try:
-        return redirect("/ending?n=s4pph1r3ag4n7") if session["coreWiped"] and session["vcsDown"] else ""
+        session["coreAuthed"]
+        return redirect("/ending?n=s4pph1r3ag4n7")
     except KeyError:
         pass
     session["vcsDown"] = True
